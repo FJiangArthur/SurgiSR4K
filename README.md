@@ -15,13 +15,6 @@ SurgiSR4K is the first publicly accessible surgical imaging and video dataset ca
 - **Diverse Challenging Conditions**: Specular reflections, tool occlusions, bleeding, smoke, tissue deformations
 - **Multi-Task Support**: Designed for super resolution, instrument detection, depth estimation, segmentation, and more
 
-### Dataset Statistics
-- **Total Videos**: 150 surgical procedures
-- **Total Duration**: ~45 hours of 4K footage
-- **Frame Count**: ~4.86M frames
-- **Video Format**: MP4 (H.264/H.265)
-- **Frame Rate**: 30 FPS
-- **Procedures**: Laparoscopic cholecystectomy, appendectomy, hernia repair
 
 ## Dataset Structure
 
@@ -29,75 +22,39 @@ SurgiSR4K is the first publicly accessible surgical imaging and video dataset ca
 SurgiSR4K/
 ├── LICENSE                          # CC-BY-NC-4.0 license
 ├── README.md                        # This file
+├── docs/
+│   └── DATASET_ORGANIZATION.md      # Detailed organization format documentation
 ├── data/
-│   ├── videos/
-│   │   ├── 4k/                      # Native 4K video files
-│   │   └── downsampled/             # Lower resolution versions
-│   │       ├── 1080p/
-│   │       ├── 720p/
-│   │       └── 480p/
-│   ├── frames/                      # Extracted frames (optional)
-│   │   ├── 4k/
-│   │   └── downsampled/
-│   └── metadata/
-│       ├── video_metadata.csv       # Video-level information
-│       ├── frame_annotations.csv    # Frame-level annotations
-│       └── quality_metrics.csv      # Technical quality assessments
-├── splits/
-│   ├── train.txt                    # Training set (70%)
-│   ├── val.txt                      # Validation set (15%)
-│   └── test.txt                     # Test set (15%)
-
+│   ├── images/
+│   │   ├── 3840x2160p/              # 4K resolution frames (ground truth)
+│   │   ├── 960x540p/                # Medium resolution frames
+│   │   └── 480x270p/                # Low resolution frames (input)
+│   └── videos/
+│       └── 3840x2160_30fps/         # Source 4K videos at 30 FPS
+├── scripts/
+│   ├── split.py                     # Dataset splitting utility
+└── ...
 ```
+
+### Original Organization Format
+
+The dataset is organized by resolution and surgical tool complexity. For detailed information about the original file organization, naming conventions, and structure, see **[Dataset Organization Documentation](docs/DATASET_ORGANIZATION.md)**.
+
+**Quick Reference:**
+- **Resolution levels**: 480×270p, 960×540p, 3840×2160p
+- **Tool categories**: 1tool, 2tool, 3tool, 4tool (complexity indicators)
+- **Naming pattern**: `vid_{ID}_{resolution}_{tool}_{frame}.png`
+- **Total frames**: 2,400 (800 per resolution across 25 videos)
 
 ## Task Definition and Labels
 
 ### Primary Task: Super Resolution (SR)
-- **Input**: Lower resolution frames (480p, 720p, 1080p)
+- **Input**: Lower resolution frames (480p, 960p, 1080p)
 - **Target**: Native 4K resolution frames
 - **Evaluation**: PSNR, SSIM, LPIPS, and perceptual quality metrics
 
-### Secondary Tasks
-- **Smoke Removal**: Frames with/without smoke artifacts
-- **Instrument Detection**: Bounding boxes for surgical tools
-- **Depth Estimation**: Monocular depth maps
-- **Segmentation**: Tissue, instrument, and background masks
-- **Novel View Synthesis**: Multi-view reconstruction
-
-### Label Formats
-- **Video Metadata**: CSV with procedure info, quality scores, technical parameters
-- **Frame Annotations**: CSV with frame-level quality indicators, scene complexity
-- **Bounding Boxes**: COCO format JSON for instrument detection
-- **Segmentation Masks**: PNG format for pixel-level annotations
-
-## Data Fields
-
-### Video Metadata
-- `video_id`: Unique identifier
-- `procedure_type`: Surgical procedure category
-- `duration_seconds`: Video length
-- `fps`: Frames per second
-- `resolution`: Video resolution
-- `quality_score`: Overall video quality (1-5 scale)
-- `challenging_scenarios`: Presence of difficult conditions
-
-### Frame Annotations
-- `frame_id`: Frame identifier
-- `timestamp`: Time in video
-- `blur_score`: Motion blur assessment
-- `lighting_quality`: Illumination quality
-- `instrument_present`: Boolean for tool visibility
-- `smoke_present`: Boolean for smoke artifacts
-- `blood_present`: Boolean for bleeding
-- `specular_reflection`: Boolean for reflections
-
 ## Getting Started
 
-### Download
-```bash
-# Download dataset (requires authentication)
-python scripts/download_data.py --output_dir ./SurgiSR4K
-```
 
 
 ## Evaluation Metrics
@@ -108,17 +65,7 @@ python scripts/download_data.py --output_dir ./SurgiSR4K
 - **LPIPS**: Learned Perceptual Image Patch Similarity
 - **Medical Quality**: Custom metrics for surgical video assessment
 
-### Benchmarking
-```python
-from scripts.evaluation.metrics import evaluate_sr_model
-
-results = evaluate_sr_model(
-    model=your_model,
-    test_loader=test_loader,
-    metrics=['psnr', 'ssim', 'lpips']
-)
-```
-
+ 
 ## Licensing and Usage
 
 ### License
@@ -158,7 +105,7 @@ We thank the surgical teams, patients, and institutions that made this dataset p
 For questions, issues, or collaboration opportunities:
 - **Primary Contact**: Fengyi Jiang (fengyi_jiang@alumni.brown.edu)
 
-- **Dataset Inquiries**: art.jiang@intusurg.com
+- **Dataset Inquiries**: ray.zhang@intusurg.com
 
 ## Version History
 

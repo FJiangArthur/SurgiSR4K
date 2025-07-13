@@ -1,0 +1,45 @@
+Creative Commons Attribution-NonCommercial 4.0 International License
+
+SurgiSR4K: A High-Resolution Endoscopic Video Dataset for Robotic-Assisted Minimally Invasive Procedures
+
+Copyright (c) 2025 Fengyi Jiang, Xiaorui Zhang, Lingbo Jin, Ruixing Liang, Yuxin Chen, Adi Chola Venkatesh, Jason Culman, Tiantian Wu, Lirong Shao, Wenqing Sun, Cong Gao, Hallie McNamara, Jingpei Lu, Omid Mohareri
+
+This work is licensed under the Creative Commons Attribution-NonCommercial 4.0 International License. To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/ or send a letter to Creative Commons, PO Box 1866, Mountain View, CA 94042, USA.
+
+You are free to:
+  - Share — copy and redistribute the material in any medium or format
+  - Adapt — remix, transform, and build upon the material
+
+The licensor cannot revoke these freedoms as long as you follow the license terms.
+
+Under the following terms:
+  - Attribution — You must give appropriate credit, provide a link to the license, and indicate if changes were made. You may do so in any reasonable manner, but not in any way that suggests the licensor endorses you or your use.
+  - NonCommercial — You may not use the material for commercial purposes.
+  - No additional restrictions — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+
+Notices:
+  - You do not have to comply with the license for elements of the material in the public domain or where your use is permitted by an applicable exception or limitation.
+  - No warranties are given. The license may not give you all of the permissions necessary for your intended use. For example, other rights such as publicity, privacy, or moral rights may limit how you use the material.
+
+For the full license text, visit: https://creativecommons.org/licenses/by-nc/4.0/legalcode
+
+Citation:
+When using this dataset, please cite:
+
+@article{jiang2025surgicsr4k,
+  title={SurgiSR4K: A High-Resolution Endoscopic Video Dataset for Robotic-Assisted Minimally Invasive Procedures},
+  author={Jiang, Fengyi and Zhang, Xiaorui and Jin, Lingbo and Liang, Ruixing and Chen, Yuxin and Venkatesh, Adi Chola and Culman, Jason and Wu, Tiantian and Shao, Lirong and Sun, Wenqing and Gao, Cong and McNamara, Hallie and Lu, Jingpei and Mohareri, Omid},
+  journal={arXiv preprint arXiv:2507.00209},
+  year={2025}
+}
+
+Contact:
+For questions about licensing, usage rights, or commercial applications, please contact:
+- Primary Contact: Fengyi Jiang (fengyi_jiang@alumni.brown.edu)
+- **Dataset Inquiries**: ray.zhang@intusurg.com
+
+Commercial Use:
+Commercial use of this dataset is not permitted under this license. For commercial licensing inquiries, please contact the dataset maintainers.
+
+Medical Disclaimer:
+This dataset is provided for research purposes only. It is not intended for clinical diagnosis, treatment, or any other medical purposes. Users should not rely on this data for medical decisions. The dataset authors disclaim any liability for any medical consequences arising from the use of this data. 
