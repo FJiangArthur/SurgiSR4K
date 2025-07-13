@@ -38,7 +38,7 @@ SurgiSR4K/
 
 ### Original Organization Format
 
-The dataset is organized by resolution and surgical tool complexity. For detailed information about the original file organization, naming conventions, and structure, see **[Dataset Organization Documentation](docs/DATASET_ORGANIZATION.md)**.
+The dataset is organized by resolution and surgical tool complexity. For detailed information about the original file organization, naming conventions, and structure, see **[Dataset Organization Documentation](DATASET_ORGANIZATION.md)**.
 
 **Quick Reference:**
 - **Resolution levels**: 480×270p, 960×540p, 3840×2160p
