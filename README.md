@@ -7,6 +7,17 @@
 
 SurgiSR4K is the first publicly accessible surgical imaging and video dataset captured at native 4K resolution (3840×2160), specifically designed for robotic-assisted minimally invasive surgery (MIS). This dataset addresses the critical need for high-resolution surgical data to advance computer vision applications in medical robotics.
 
+**Paper**: [SurgiSR4K: A High-Resolution Endoscopic Video Dataset for Robotic-Assisted Minimally Invasive Procedures](https://arxiv.org/abs/2507.00209)
+
+### Authors
+Fengyi Jiang¹, Xiaorui Zhang¹, Lingbo Jin¹, Ruixing Liang¹'²'³, Yuxin Chen¹'⁴, Adi Chola Venkatesh¹, Jason Culman¹, Tiantian Wu⁵, Lirong Shao¹, Wenqing Sun¹, Cong Gao¹, Hallie McNamara¹, Jingpei Lu¹, Omid Mohareri¹
+
+¹ Intuitive Surgical, Inc., Sunnyvale, CA, USA  
+² Johns Hopkins Medicine Neurosurgery, Baltimore, MD, USA  
+³ Johns Hopkins University Electrical and Computer Engineering, Baltimore, MD, USA  
+⁴ University of British Columbia Electrical and Computer Engineering, Vancouver, BC, Canada  
+⁵ Wilford & Kate Bailey Small Animal Teaching Hospital, Auburn, AL, USA
+
 ## Dataset Description
 
 ### Key Features
@@ -14,6 +25,32 @@ SurgiSR4K is the first publicly accessible surgical imaging and video dataset ca
 - **Realistic Surgical Scenarios**: Authentic robotic-assisted laparoscopic procedures
 - **Diverse Challenging Conditions**: Specular reflections, tool occlusions, bleeding, smoke, tissue deformations
 - **Multi-Task Support**: Designed for super resolution, instrument detection, depth estimation, segmentation, and more
+
+## Sample Images
+
+The following examples showcase the dataset's diversity across different resolutions and surgical tool complexities:
+
+### High-Resolution 4K Sample (3840×2160p)
+![4K Sample - 4 Tools](./doc/high-res.png)
+*Example of native 4K resolution frame showing complex 4-tool surgical scenario*
+
+### Medium Resolution Sample (960×540p)
+![Medium Resolution - 2 Tools](./doc/med-res.png)
+*Medium resolution frame demonstrating 2-tool procedure*
+
+### Low Resolution Input Sample (480×270p)
+![Low Resolution - 1 Tool](./doc/low-res.png)
+
+*Low resolution input frame showing single tool operation*
+
+### Resolution Comparison
+| Resolution | Sample Frame | Tool Complexity | Use Case |
+|------------|--------------|-----------------|----------|
+| 3840×2160p | High-detail 4K | 4 tools | Ground truth for SR |
+| 960×540p | Medium quality | 2 tools | Intermediate SR target |
+| 480×270p | Low quality | 1 tool | SR input/baseline |
+
+These samples demonstrate the dataset's capability to support super-resolution research with realistic surgical scenarios featuring varying numbers of instruments and different levels of procedural complexity.
 
 
 ## Dataset Structure
