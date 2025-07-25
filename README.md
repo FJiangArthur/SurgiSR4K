@@ -18,6 +18,16 @@ Fengyi Jiang¹, Xiaorui Zhang¹, Lingbo Jin¹, Ruixing Liang¹'²'³, Yuxin Chen
 ⁴ University of British Columbia Electrical and Computer Engineering, Vancouver, BC, Canada  
 ⁵ Wilford & Kate Bailey Small Animal Teaching Hospital, Auburn, AL, USA
 
+<img src="./doc/Figure1.jpg" alt="Figure 1" width="600">
+
+**Figure 1**: Side-by-side comparison of 1080p (top) and 4K (bottom) endoscopic images captured simultaneously with separate 1080p and 4K cameras.
+
+## Dataset Download
+
+**Download Link**: [https://www.synapse.org/SurgiSR4K](https://www.synapse.org/SurgiSR4K)
+
+> **Note**: The actual dataset images and videos are hosted on Synapse. This GitHub repository contains documentation, scripts, and sample images for reference.
+
 ## Dataset Description
 
 ### Key Features
@@ -31,15 +41,17 @@ Fengyi Jiang¹, Xiaorui Zhang¹, Lingbo Jin¹, Ruixing Liang¹'²'³, Yuxin Chen
 The following examples showcase the dataset's diversity across different resolutions and surgical tool complexities:
 
 ### High-Resolution 4K Sample (3840×2160p)
-![4K Sample - 4 Tools](./doc/high-res.png)
+<img src="./doc/high-res.png" alt="4K Sample - 4 Tools" width="400">
+
 *Example of native 4K resolution frame showing complex 4-tool surgical scenario*
 
 ### Medium Resolution Sample (960×540p)
-![Medium Resolution - 2 Tools](./doc/med-res.png)
+<img src="./doc/med-res.png" alt="Medium Resolution - 2 Tools" width="400">
+
 *Medium resolution frame demonstrating 2-tool procedure*
 
 ### Low Resolution Input Sample (480×270p)
-![Low Resolution - 1 Tool](./doc/low-res.png)
+<img src="./doc/low-res.png" alt="Low Resolution - 1 Tool" width="400">
 
 *Low resolution input frame showing single tool operation*
 
@@ -52,6 +64,9 @@ The following examples showcase the dataset's diversity across different resolut
 
 These samples demonstrate the dataset's capability to support super-resolution research with realistic surgical scenarios featuring varying numbers of instruments and different levels of procedural complexity.
 
+<img src="./doc/figure_datasample.jpg" alt="Figure 2" width="700">
+
+**Figure 2**: Example frames from the training dataset, showcasing various tools and scenarios used in different scenarios. These frames highlight the diversity of situations included in the dataset.
 
 ## Dataset Structure
 
@@ -89,6 +104,19 @@ The dataset is organized by resolution and surgical tool complexity. For detaile
 - **Input**: Lower resolution frames (480p, 960p, 1080p)
 - **Target**: Native 4K resolution frames
 - **Evaluation**: PSNR, SSIM, LPIPS, and perceptual quality metrics
+
+## Downstream Applications
+
+Examples of downstream applications: (a) instance segmentation (Ravi et al. (2024)), (b) surgical tool detection with bounding boxes (Liu et al. (2025)), (c) depth estimation (Bochkovskii et al. (2024)), (d) tool segmentation Ravi et al. (2024), and (e) 3D reconstruction. (Hu et al. (2025))
+
+### References
+- Nikhila Ravi, Valentin Gabeur, Yuan-Ting Hu, Ronghang Hu, Chaitanya Ryali, Tengyu Ma, Haitham Khedr, Roman Rädle, Chloe Rolland, Laura Gustafson, et al. Sam 2: Segment anything in images and videos. *arXiv preprint arXiv:2408.00714*, 2024.
+
+- Ziyu Liu, Zeyi Sun, Yuhang Zang, Xiaoyi Dong, Yuhang Cao, Haodong Duan, Dahua Lin, and Jiaqi Wang. Visual-rft: Visual reinforcement fine-tuning. *arXiv preprint arXiv:2503.01785*, 2025.
+
+- Aleksei Bochkovskii, AmañAG¸l Delaunoy, Hugo Germain, Marcel Santos, Yichao Zhou, Stephan R Richter, and Vladlen Koltun. Depth pro: Sharp monocular metric depth in less than a second. *arXiv preprint arXiv:2410.02073*, 2024.
+
+- Wenbo Hu, Xiangjun Gao, Xiaoyu Li, Sijie Zhao, Xiaodong Cun, Yong Zhang, Long Quan, and Ying Shan. Depthcrafter: Generating consistent long depth sequences for open-world videos. In *Proceedings of the Computer Vision and Pattern Recognition Conference*, pages 2005–2015, 2025.
 
 ## Getting Started
 
